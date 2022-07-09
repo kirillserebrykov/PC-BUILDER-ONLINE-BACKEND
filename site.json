@@ -1,0 +1,27 @@
+
+{
+  "hard.rozetka.com.ua": {
+    "class.price": ".product-prices__big",
+    "class.title": ".product__title"
+  },
+  "telemart.ua": {
+    "class.price": ".b-price",
+    "class.title": ".b-page-title"
+  },
+  "compx.com.ua": {
+    "class.price": ".product-price__item",
+    "class.title": ".product-title"
+  },
+  "www.olx.ua": {
+    "class.price": ".css-okktvh-Text",
+    "class.title": ".css-r9zjja-Text"
+  },
+  "stylus.ua": {
+    "class.price": ".regular-price",
+    "class.title": ".page-name"
+  },
+  "www.moyo.ua": {
+    "class.price": ".product_price_current > span",
+    "class.title": ".product_name"
+  }
+}
