@@ -2,7 +2,7 @@ import Fastify from 'fastify'
 import {GetPage} from './puppeteer.js'
 import cluster  from "cluster";
 import os from "os"
-const port = 5000
+const port = process.env.PORT || 8080
 const numCPUs = os.cpus().length
 
 let price = 0
