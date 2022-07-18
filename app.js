@@ -3,6 +3,7 @@ import {GetPage} from './puppeteer.js'
 import cluster  from "cluster";
 import os from "os"
 const port = process.env.PORT || 8080
+const host = process.env.PORT || '0.0.0.0'
 const numCPUs = os.cpus().length
 
 let price = 0
@@ -45,6 +46,7 @@ if (cluster.isMaster) {
     })
     fastify.listen({
         port,
+		host,
         maxRequestsPerSocket: 199
     }, () => {
         console.log(`Fastify "start" listening on port ${port}, PID: ${process.pid}`);
