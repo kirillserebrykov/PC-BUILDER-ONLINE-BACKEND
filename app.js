@@ -22,8 +22,8 @@ fastify.get('/', async (request, reply) => {
     reply.header("Access-Control-Allow-Origin", "*");
     reply.header("Access-Control-Allow-Methods", "GET");
 
-    console.log(numCPUs)
-    return numCPUs
+    console.log("")
+    return "gfdgdf"
 })
 
 fastify.get('/getDataComponent', async (request, reply) => {
@@ -55,8 +55,8 @@ if (cluster.isMaster) {
 */
 fastify.listen({
         port,
-		host,
-        maxRequestsPerSocket: 199
+	  //  host,
+      //  maxRequestsPerSocket: 199
     }, () => {
         console.log(`Fastify "start" listening on port ${port}`);
     });
