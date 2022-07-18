@@ -36,4 +36,4 @@
     '--use-mock-keychain',
 ];
 
-export const puppeteer_settings = {headless: false,  args: puppeteer_settings_args}
+export const puppeteer_settings = {headless: true,  args: puppeteer_settings_args}
