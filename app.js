@@ -26,9 +26,14 @@ fastify.get('/', async (request, reply) => {
     return numCPUs
 })
 
+fastify.get('/getDataComponent', async (request, reply) => {
+        reply.header("Access-Control-Allow-Origin", "*");
+        reply.header("Access-Control-Allow-Methods", "GET");
+        const url_site = new URL(request.query.url)
+        return GetPage(url_site).then(value => value)
+    })
 
-
-
+/*
 if (cluster.isMaster) {
     console.log(`Master ${process.pid} is running`);
     for (let i = 0; i < numCPUs; i++) {
@@ -38,12 +43,7 @@ if (cluster.isMaster) {
         console.log(`Worker ${worker.process.pid} died`);
     });
 } else {
-    fastify.get('/getDataComponent', async (request, reply) => {
-        reply.header("Access-Control-Allow-Origin", "*");
-        reply.header("Access-Control-Allow-Methods", "GET");
-        const url_site = new URL(request.query.url)
-        return GetPage(url_site).then(value => value)
-    })
+    
     fastify.listen({
         port,
 		host,
@@ -52,3 +52,11 @@ if (cluster.isMaster) {
         console.log(`Fastify "start" listening on port ${port}, PID: ${process.pid}`);
     });
 }
+*/
+fastify.listen({
+        port,
+		host,
+        maxRequestsPerSocket: 199
+    }, () => {
+        console.log(`Fastify "start" listening on port ${port}`);
+    });
