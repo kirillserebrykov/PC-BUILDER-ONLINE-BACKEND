@@ -18,7 +18,7 @@ const fastify = Fastify({
 
 
 
-fastify.get('/cluster', async (request, reply) => {
+fastify.get('/', async (request, reply) => {
     reply.header("Access-Control-Allow-Origin", "*");
     reply.header("Access-Control-Allow-Methods", "GET");
 
