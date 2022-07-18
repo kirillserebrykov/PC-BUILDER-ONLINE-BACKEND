@@ -29,8 +29,8 @@ fastify.get('/', async (request, reply) => {
 fastify.get('/getDataComponent', async (request, reply) => {
         reply.header("Access-Control-Allow-Origin", "*");
         reply.header("Access-Control-Allow-Methods", "GET");
-        const url_site = new URL(request.query.url)
-        return GetPage(url_site).then(value => value)
+       // const url_site = new URL(request.query.url)
+       //return GetPage(url_site).then(value => value)
     })
 
 /*
