@@ -13,11 +13,11 @@
   "license": "ISC",
   "dependencies": {
     "@fastify/cors": "^8.0.0",
-    "fastify": "^4.2.0",
+    "fastify": "^3.0.0",
     "puppeteer": "^15.3.1",
     "puppeteer-firefox": "^0.5.0"
   },
   "engines": {
-  "node": "16.x"
-}
+    "node": "16.x"
+  }
 }
