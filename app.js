@@ -13,20 +13,31 @@ const fastify = Fastify({
 // Declare a route
 
 // Declare a route
-fastify.get('/', async (request, reply) => {
-  return { hello: 'world' }
-})
-
-// Run the server!
-const start = async () => {
-  try {
-    await fastify.listen({ port: port })
-  } catch (err) {
-    fastify.log.error(err)
-    process.exit(1)
+const schema = {
+  schema: {
+    response: {
+      200: {
+        type: 'object',
+        properties: {
+          hello: {
+            type: 'string'
+          }
+        }
+      }
+    }
   }
 }
-start()
+
+fastify
+  .get('/', schema, function (req, reply) {
+    reply
+      .send({ hello: 'world' })
+  })
+
+fastify.listen(process.env.PORT || 3000, err => {
+  if (err) throw err
+  console.log(`server listening on ${fastify.server.address().port}`)
+})
 
 
 
