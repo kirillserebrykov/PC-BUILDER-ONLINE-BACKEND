@@ -12,10 +12,25 @@ const fastify = Fastify({
 })
 // Declare a route
 
+// Declare a route
+fastify.get('/', async (request, reply) => {
+  return { hello: 'world' }
+})
+
+// Run the server!
+const start = async () => {
+  try {
+    await fastify.listen({ port: port })
+  } catch (err) {
+    fastify.log.error(err)
+    process.exit(1)
+  }
+}
+start()
 
 
 
-
+/*
 
 fastify.get('/', async (request, reply) => {
     reply.header("Access-Control-Allow-Origin", "*");
@@ -32,7 +47,7 @@ fastify.get('/getDataComponent', async (request, reply) => {
        //return GetPage(url_site).then(value => value)
     })
 
-/*
+
 if (cluster.isMaster) {
     console.log(`Master ${process.pid} is running`);
     for (let i = 0; i < numCPUs; i++) {
@@ -52,9 +67,3 @@ if (cluster.isMaster) {
     });
 }
 */
-fastify.listen({ port: port }, (err) => {
-  if (err) {
-    fastify.log.error(err)
-    process.exit(1)
-  }
-})
