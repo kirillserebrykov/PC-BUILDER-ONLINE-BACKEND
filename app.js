@@ -53,10 +53,5 @@ if (cluster.isMaster) {
     });
 }
 */
-fastify.listen({
-        port,
-	  //  host,
-      //  maxRequestsPerSocket: 199
-    }, () => {
-        console.log(`Fastify "start" listening on port ${port}`);
-    });
+
+await fastify.listen(port, host || '0.0.0.0');
