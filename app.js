@@ -2,14 +2,13 @@ import Fastify from 'fastify'
 import {GetPage} from './puppeteer.js'
 import cluster  from "cluster";
 import os from "os"
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 3000 
 const host = process.env.PORT || '0.0.0.0'
 const numCPUs = os.cpus().length
 
 let price = 0
 const fastify = Fastify({
   logger: true,
-  pluginTimeout: 10000
 })
 // Declare a route
 
@@ -53,9 +52,9 @@ if (cluster.isMaster) {
     });
 }
 */
-fastify.listen(process.env.PORT || 3000, '0.0.0.0', (err) => {
+fastify.listen({ port: port }, (err) => {
   if (err) {
-    app.log.error(err)
+    fastify.log.error(err)
     process.exit(1)
   }
 })
