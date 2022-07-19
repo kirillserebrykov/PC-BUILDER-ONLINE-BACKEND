@@ -8,9 +8,9 @@ const numCPUs = os.cpus().length
 
 let price = 0
 const fastify = Fastify({
-    logger: false
-});
-
+  logger: true,
+  pluginTimeout: 10000
+})
 // Declare a route
 
 
@@ -53,9 +53,9 @@ if (cluster.isMaster) {
     });
 }
 */
-fastify.listen(process.env.PORT || 5000, (err, address) => {
+fastify.listen(process.env.PORT || 3000, '0.0.0.0', (err) => {
   if (err) {
-    fastify.log.error(err)
+    app.log.error(err)
     process.exit(1)
   }
 })
