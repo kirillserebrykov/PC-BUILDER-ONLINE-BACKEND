@@ -53,10 +53,9 @@ if (cluster.isMaster) {
     });
 }
 */
-
-fastify.listen({port : process.env.PORT || 3000}, (err) => {
+fastify.listen({ port: port, host: host }, (err, address) => {
   if (err) {
-    app.log.error(err)
+    fastify.log.error(err)
     process.exit(1)
   }
 })
