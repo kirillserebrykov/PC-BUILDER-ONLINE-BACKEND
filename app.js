@@ -1,18 +1,14 @@
 import Fastify from 'fastify'
 import {GetPage} from './puppeteer.js'
 import cluster  from "cluster";
-import os from "os"
-const port = process.env.PORT || 3000 
-const host = process.env.PORT || '0.0.0.0'
-const numCPUs = os.cpus().length
+//import os from "os"
+//const numCPUs = os.cpus().length
 
-let price = 0
+//let price = 0
 const fastify = Fastify({
   logger: true,
 })
-// Declare a route
 
-// Declare a route
 const schema = {
   schema: {
     response: {
@@ -28,10 +24,8 @@ const schema = {
   }
 }
 
-fastify
-  .get('/', schema, function (req, reply) {
-    reply
-      .send({ hello: 'world' })
+fastify.get('/', schema, function (req, reply) {
+    reply.send({ hello: 'world' })
   })
 
 fastify.listen(process.env.PORT || 3000, err => {
