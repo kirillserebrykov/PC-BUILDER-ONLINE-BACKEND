@@ -48,7 +48,7 @@ if (cluster.isMaster) {
         console.log(`Worker ${worker.process.pid} died`);
     });
 } else {
-  fastify.listen(process.env.PORT || 5000, err => {
+  fastify.listen(process.env.PORT, '0.0.0.0',err => {
     if (err) throw err
     console.log(`server listening on ${fastify.server.address().port}`)
   })
