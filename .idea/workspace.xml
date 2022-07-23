@@ -4,6 +4,10 @@
     <list default="true" id="8ab727f5-77be-4ea3-8a42-9d5734e8d294" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puppeteer.js" beforeDir="false" afterPath="$PROJECT_DIR$/puppeteer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/setting.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +85,8 @@
       <workItem from="1658480870501" duration="1757000" />
       <workItem from="1658483204546" duration="8025000" />
       <workItem from="1658512924012" duration="7153000" />
-      <workItem from="1658520263535" duration="1985000" />
+      <workItem from="1658520263535" duration="4795000" />
+      <workItem from="1658563019278" duration="6718000" />
     </task>
     <servers />
   </component>
@@ -113,10 +118,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1657138617389" />
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1658498864626">
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1658565711094">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1658498864626" />
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1658565711094" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1657225768962">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
