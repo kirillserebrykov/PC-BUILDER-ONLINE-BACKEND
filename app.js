@@ -2,24 +2,12 @@ import Fastify from 'fastify'
 import {GetPage,GetDataComputerUniverse} from './puppeteer.js'
 import cluster  from "cluster";
 import os from "os"
-
 const numCPUs = os.cpus().length
 
-let price = 0
 const fastify = Fastify({
   logger: true,
 })
 
-
-
-
-
-fastify.get('/', async (request, reply) => {
-    reply.header("Access-Control-Allow-Origin", "*");
-    reply.header("Access-Control-Allow-Methods", "GET");
-
-    return "gfdgdf"
-})
 
 fastify.get('/getDataComponent', async (request, reply) => {
         reply.header("Access-Control-Allow-Origin", "*");
@@ -33,10 +21,6 @@ fastify.get('/getDataComponent', async (request, reply) => {
         }
 
     })
-
-
-
-
 
 
 if (cluster.isMaster) {
