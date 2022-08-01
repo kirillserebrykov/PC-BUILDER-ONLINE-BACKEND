@@ -2,26 +2,37 @@
 {
   "hard.rozetka.com.ua": {
     "class.price": ".product-prices__big",
-    "class.title": ".product__title"
+    "class.title": ".product__title",
+    "class.img": "head > meta[property='og:image']"
   },
   "telemart.ua": {
     "class.price": ".b-price",
-    "class.title": ".b-page-title"
+    "class.title": ".b-page-title",
+    "class.img": "head > meta[property='og:image']"
   },
   "compx.com.ua": {
     "class.price": ".product-price__item",
-    "class.title": ".product-title"
+    "class.title": ".product-title",
+    "class.img": "head > meta[property='og:image']"
   },
   "www.olx.ua": {
     "class.price": ".css-okktvh-Text",
-    "class.title": ".css-r9zjja-Text"
+    "class.title": ".css-r9zjja-Text",
+    "class.img": "head > meta[property='og:image']"
   },
   "stylus.ua": {
     "class.price": ".regular-price",
-    "class.title": ".page-name"
+    "class.title": ".page-name",
+    "class.img": "head > meta[property='og:image']"
   },
   "www.moyo.ua": {
     "class.price": ".product_price_current > span",
-    "class.title": ".product_name"
+    "class.title": ".product_name",
+    "class.img": "head > meta[property='og:image']"
+  },
+  "www.amazon.com": {
+    "class.price": ".a-offscreen",
+    "class.title": ".product-title-word-break",
+    "class.img":   ".a-stretch-horizontal"
   }
 }

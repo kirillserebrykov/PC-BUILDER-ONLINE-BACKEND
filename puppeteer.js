@@ -21,7 +21,7 @@ export const GetPage = async (url_site) => {
 
     const ParseElement = async (iterationBy,isImg = false) => {
         const className = getClass(url_site.host,iterationBy).join("")
-        if(isImg) return  await page.$eval("head > meta[property='og:image']", element => element.content );
+        if(isImg) return  await page.$eval(className, element => element.content );
         else return  await page.$eval(className, element => element.innerText );
     }
     const pushInResult = (where, value) =>{
