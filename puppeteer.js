@@ -31,7 +31,7 @@ export const GetPage = async (url_site) => {
 
     await  ParseElement("class.price").then(value => {
         const price = +value.replace(/[a-z, A-Z,а-я, А-Я, \D]/g, "")
-        const currency = value.replace(/[0-9,\s+ ]/g, "").toUpperCase()
+        const currency = value.replace(/[0-9,\s+ .]/g, "").toUpperCase()
         pushInResult("price", price)
         pushInResult("currency",currency)
     }).catch(err => catchErrorInParse(err))
