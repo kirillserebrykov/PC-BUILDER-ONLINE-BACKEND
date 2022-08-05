@@ -12,6 +12,7 @@ const fastify = Fastify({
 fastify.get('/getDataComponent', async (request, reply) => {
         reply.header("Access-Control-Allow-Origin", "*");
         reply.header("Access-Control-Allow-Methods", "GET");
+
         const url_site = new URL(request.query.url)
         if(url_site.host !== "www.computeruniverse.net") {
             return GetPage(url_site).then(value => value)
@@ -32,6 +33,7 @@ if (cluster.isMaster) {
         console.log(`Worker ${worker.process.pid} died`);
     });
 } else {
+    // process.env.PORT, '0.0.0.0',
 
   fastify.listen(process.env.PORT, '0.0.0.0',err => {
     if (err) throw err

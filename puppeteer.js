@@ -3,12 +3,12 @@ import {getClass} from "./OperationsWithJSON.js";
 import {puppeteer_settings} from "./setting.js";
 
 
-const catchErrorInParse = (err) => {throw Error(err)}
 
 export const GetPage = async (url_site) => {
 
     const browser = await puppeteer.launch(puppeteer_settings);
     const page = await browser.newPage();
+    await page.setViewport({width: 1360, height: 720})
     await page.setDefaultNavigationTimeout(0);
     await page.goto(url_site,{ waitUntil: 'networkidle2' });
 
@@ -20,8 +20,12 @@ export const GetPage = async (url_site) => {
     }
 
     const ParseElement = async (iterationBy,isImg = false) => {
+
         const className = getClass(url_site.host,iterationBy).join("")
-        if(isImg) return  await page.$eval(className, element => element.content );
+        if(isImg) return  await page.$eval(className,  (element) => {
+               console.log(element.src !== null)
+          return   element.src + element.content
+        });
         else return  await page.$eval(className, element => element.innerText );
     }
     const pushInResult = (where, value) =>{
@@ -29,15 +33,40 @@ export const GetPage = async (url_site) => {
     }
 
 
+    const catchErrorInParse = async (err) => {
+        console.log(err)
+    }
+
+
+    await  ParseElement("class.img",true).then(value => {
+
+        pushInResult("img", value)
+    }  ).catch(err => catchErrorInParse(err))
+    await  ParseElement("class.title").then(value =>  pushInResult("title", value)  ).catch(err => catchErrorInParse(err))
+    if (await page.$('span[id="buybox-see-all-buying-choices"]') !== null) {
+        await page.click('span[id="buybox-see-all-buying-choices"]');
+        await page.waitForSelector('.a-price')
+    }
+
+
     await  ParseElement("class.price").then(value => {
-        const price = +value.replace(/[a-z, A-Z,а-я, А-Я, \D]/g, "")
+        const price = value.replace(/[,]/g, ".").replace(/[a-z A-Z а-я А-Я $ €]/g, "")
         const currency = value.replace(/[0-9,\s+ .]/g, "").toUpperCase()
         pushInResult("price", price)
         pushInResult("currency",currency)
-    }).catch(err => catchErrorInParse(err))
+    }).catch( async () => {
+        await  ParseElement("class.case.err").then(value => {
+            const price = value.replace(/[,]/g, ".").replace(/[a-z A-Z а-я А-Я $ €]/g, "")
+            const currency = value.replace(/[0-9,\s+ .]/g, "").toUpperCase()
+            pushInResult("price", price)
+            pushInResult("currency",currency)
+        }).catch(async() => {
 
-    await  ParseElement("class.img",true).then(value =>  pushInResult("img", value)  ).catch(err => catchErrorInParse(err))
-    await  ParseElement("class.title").then(value =>  pushInResult("title", value)  ).catch(err => catchErrorInParse(err))
+
+        })
+    })
+
+
     await browser.close()
     return result
 
@@ -69,7 +98,7 @@ export const GetDataComputerUniverse = async (id) => {
     const img = `https://img.computerunivers.net${resultForData.ProductPictures[0].ImageUrlBig}`
     const currency = resultForPrice.Price.PriceRaw.Currency.CurrencyCode
 
-    await browser.close()
+   await browser.close()
     return {
         "price": price,
         "img": img,

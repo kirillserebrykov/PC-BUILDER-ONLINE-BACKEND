@@ -30,9 +30,16 @@
     "class.title": ".product_name",
     "class.img": "head > meta[property='og:image']"
   },
+  "www.amazon.de": {
+    "class.price": ".a-price > .a-offscreen",
+    "class.title": "#productTitle",
+    "class.img":   ".a-dynamic-image",
+    "class.case.err": "#olp_feature_div > .a-section > .a-declarative > .a-link-normal > .a-color-price"
+  },
   "www.amazon.com": {
-    "class.price": ".a-offscreen",
-    "class.title": ".product-title-word-break",
-    "class.img":   ".a-stretch-horizontal"
+    "class.price": ".a-price > .a-offscreen",
+    "class.title": "#productTitle",
+    "class.img":   ".a-dynamic-image",
+    "class.case.err": "#olp_feature_div > .a-section > .a-declarative > .a-link-normal > .a-color-price"
   }
 }
