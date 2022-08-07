@@ -20,28 +20,18 @@ export const GetPage = async (url_site) => {
     }
 
     const ParseElement = async (iterationBy,isImg = false) => {
-
         const className = getClass(url_site.host,iterationBy).join("")
-        if(isImg) return  await page.$eval(className,  (element) => {
-               console.log(element.src !== null)
-          return   element.src + element.content
-        });
+        if(isImg) return await page.$eval(className, (element) => element.content ? element.content : element.src);
         else return  await page.$eval(className, element => element.innerText );
     }
-    const pushInResult = (where, value) =>{
-        result[where] = value
-    }
 
+    const pushInResult = (where, value) => result[where] = value
 
     const catchErrorInParse = async (err) => {
-        console.log(err)
+        throw Error("not found")
     }
 
-
-    await  ParseElement("class.img",true).then(value => {
-
-        pushInResult("img", value)
-    }  ).catch(err => catchErrorInParse(err))
+    await  ParseElement("class.img",true).then(value => {pushInResult("img", value)}).catch(err => catchErrorInParse(err))
     await  ParseElement("class.title").then(value =>  pushInResult("title", value)  ).catch(err => catchErrorInParse(err))
     if (await page.$('span[id="buybox-see-all-buying-choices"]') !== null) {
         await page.click('span[id="buybox-see-all-buying-choices"]');
@@ -50,9 +40,10 @@ export const GetPage = async (url_site) => {
 
 
     await  ParseElement("class.price").then(value => {
-        const price = value.replace(/[,]/g, ".").replace(/[a-z A-Z а-я А-Я $ €]/g, "")
+        const price = value.replace(/[,]/g, ".").replace(/[a-z A-Z а-я А-Я $ € ₴]/g, "")
         const currency = value.replace(/[0-9,\s+ .]/g, "").toUpperCase()
-        pushInResult("price", price)
+
+        pushInResult("price", +price)
         pushInResult("currency",currency)
     }).catch( async () => {
         await  ParseElement("class.case.err").then(value => {
@@ -60,13 +51,8 @@ export const GetPage = async (url_site) => {
             const currency = value.replace(/[0-9,\s+ .]/g, "").toUpperCase()
             pushInResult("price", price)
             pushInResult("currency",currency)
-        }).catch(async() => {
-
-
-        })
+        }).catch(async() => {catchErrorInParse()})
     })
-
-
     await browser.close()
     return result
 

@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8ab727f5-77be-4ea3-8a42-9d5734e8d294" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/setting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/puppeteer.js" beforeDir="false" afterPath="$PROJECT_DIR$/puppeteer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site.json" beforeDir="false" afterPath="$PROJECT_DIR$/site.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +86,9 @@
       <workItem from="1658563019278" duration="6718000" />
       <workItem from="1659381373191" duration="1419000" />
       <workItem from="1659537400519" duration="11206000" />
-      <workItem from="1659704986712" duration="18950000" />
+      <workItem from="1659704986712" duration="19488000" />
+      <workItem from="1659774198420" duration="4870000" />
+      <workItem from="1659869424690" duration="486000" />
     </task>
     <servers />
   </component>

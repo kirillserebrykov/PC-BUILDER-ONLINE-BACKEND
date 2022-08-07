@@ -1,12 +1,12 @@
 
 {
   "hard.rozetka.com.ua": {
-    "class.price": ".product-prices__big",
+    "class.price": ".product-prices__inner > .product-prices__big",
     "class.title": ".product__title",
     "class.img": "head > meta[property='og:image']"
   },
   "telemart.ua": {
-    "class.price": ".b-price",
+    "class.price": ".b-pmi-col-left >  .b-price",
     "class.title": ".b-page-title",
     "class.img": "head > meta[property='og:image']"
   },
