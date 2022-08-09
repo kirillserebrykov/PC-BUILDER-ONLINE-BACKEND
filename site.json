@@ -31,10 +31,11 @@
     "class.img": "head > meta[property='og:image']"
   },
   "www.amazon.de": {
-    "class.price": ".a-price > .a-offscreen",
+    "class.price": "#aod-price-1 > .a-price > .a-offscreen",
     "class.title": "#productTitle",
-    "class.img":   ".a-dynamic-image",
-    "class.case.err": "#olp_feature_div > .a-section > .a-declarative > .a-link-normal > .a-color-price"
+    "class.img":   ".imgTagWrapper > .a-dynamic-image",
+    "class.case.err":"#corePrice_feature_div > .a-section > .a-price > .a-offscreen"
+
   },
   "www.amazon.com": {
     "class.price": ".a-price > .a-offscreen",

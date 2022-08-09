@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ab727f5-77be-4ea3-8a42-9d5734e8d294" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/snippets/page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puppeteer.js" beforeDir="false" afterPath="$PROJECT_DIR$/puppeteer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/setting.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/site.json" beforeDir="false" afterPath="$PROJECT_DIR$/site.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +91,9 @@
       <workItem from="1659537400519" duration="11206000" />
       <workItem from="1659704986712" duration="19488000" />
       <workItem from="1659774198420" duration="4870000" />
-      <workItem from="1659869424690" duration="486000" />
+      <workItem from="1659869424690" duration="13482000" />
+      <workItem from="1659954436247" duration="14450000" />
+      <workItem from="1660033578091" duration="7984000" />
     </task>
     <servers />
   </component>
@@ -180,10 +185,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="500" y="71" key="RollbackChangesDialog/0.0.1366.738@0.0.1366.738" timestamp="1659732834856" />
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1659548165695">
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1659976280373">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1659548165695" />
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1659976280373" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1657225768962">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

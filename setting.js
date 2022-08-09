@@ -37,4 +37,4 @@
 
 ];
 
-export const puppeteer_settings = {headless: true   ,  args: puppeteer_settings_args, ignoreHTTPSErrors: true}
+export const puppeteer_settings = {headless: true,  args: puppeteer_settings_args, ignoreHTTPSErrors: true}

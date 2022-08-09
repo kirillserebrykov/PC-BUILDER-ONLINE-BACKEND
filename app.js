@@ -34,7 +34,7 @@ if (cluster.isMaster) {
     });
 } else {
     // process.env.PORT, '0.0.0.0',
-
+    // process.env.PORT || 5000
   fastify.listen(process.env.PORT, '0.0.0.0',err => {
     if (err) throw err
     console.log(`server listening on ${fastify.server.address().port}`)
