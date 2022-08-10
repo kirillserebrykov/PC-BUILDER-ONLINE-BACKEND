@@ -13,7 +13,8 @@ export const GetPage = async (url_site) => {
     const page = await browser.newPage();
     await page.setViewport({width: 1360, height: 720})
     await page.setDefaultNavigationTimeout(0);
-    await page.goto(url_site,{ waitUntil: 'networkidle2'  });
+    await page.goto(url_site,{ waitUntil: 'networkidle2', timeout:0  });
+
     await SelectCountry(page)
 
     let result = {
@@ -32,7 +33,8 @@ export const GetPage = async (url_site) => {
     const pushInResult = (where, value) => result[where] = value
 
     const catchErrorInParse = async (err) => {
-        throw Error(err)
+        console.log(1)
+
     }
     await  ParseElement("class.img",true).then(value => {pushInResult("img", value)}).catch(err => catchErrorInParse(err))
     await  ParseElement("class.title").then(value =>  pushInResult("title", value)  ).catch(err => catchErrorInParse(err))
