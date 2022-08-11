@@ -2,12 +2,15 @@ export const SelectCountry = async (page) => {
     if (await page.$('a[id="nav-global-location-popover-link"]') !== null) {
         await page.waitForSelector('a[id="nav-global-location-popover-link"]')
         await page.click('a[id="nav-global-location-popover-link"]');
+        page.waitForNavigation({waitUntil: 'networkidle0'})
         await page.waitForSelector('input[id="GLUXZipUpdateInput"]')
         await page.$eval('input[id="GLUXZipUpdateInput"]', el => el.value = '20095');
         await page.waitForSelector('span[id="GLUXZipUpdate"]')
         await page.click('span[id="GLUXZipUpdate"]');
-        await page.waitForSelector('div[id="GLUXHiddenSuccessSelectedAddressPlaceholder"]')
+        page.waitForNavigation({waitUntil: 'networkidle0'})
+        await page.waitForSelector('div[data-action="a-popover-a11y"]')
         await page.click('div[data-action="a-popover-a11y"] ');
+        page.waitForNavigation({waitUntil: 'networkidle0'})
         await page.reload({ waitUntil: ["networkidle0", "domcontentloaded"] });
         await page.waitForSelector('#productTitle')
     }

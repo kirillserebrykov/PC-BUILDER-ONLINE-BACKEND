@@ -33,7 +33,7 @@ export const GetPage = async (url_site) => {
     const pushInResult = (where, value) => result[where] = value
 
     const catchErrorInParse = async (err) => {
-        console.log(1)
+        console.log(err)
 
     }
     await  ParseElement("class.img",true).then(value => {pushInResult("img", value)}).catch(err => catchErrorInParse(err))
