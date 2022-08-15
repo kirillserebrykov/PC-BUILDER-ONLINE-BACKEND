@@ -11,9 +11,10 @@ export const GetPage = async (url_site) => {
 
     const browser = await puppeteer.launch(puppeteer_settings);
     const page = await browser.newPage();
+    await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36');
     await page.setViewport({width: 1360, height: 720})
     await page.setDefaultNavigationTimeout(0);
-    await page.goto(url_site,{ waitUntil: 'networkidle2', timeout:0  });
+    await page.goto(url_site,{ waitUntil: 'networkidle2', waitUntil: 'domcontentloaded'  });
 
     await SelectCountry(page)
 
