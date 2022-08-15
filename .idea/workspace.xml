@@ -4,8 +4,6 @@
     <list default="true" id="8ab727f5-77be-4ea3-8a42-9d5734e8d294" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puppeteer.js" beforeDir="false" afterPath="$PROJECT_DIR$/puppeteer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snippets/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/snippets/page.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +94,7 @@
       <workItem from="1660237022857" duration="4507000" />
       <workItem from="1660295477608" duration="6327000" />
       <workItem from="1660503104835" duration="598000" />
-      <workItem from="1660551756357" duration="615000" />
+      <workItem from="1660551756357" duration="1392000" />
     </task>
     <servers />
   </component>
@@ -188,10 +186,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="500" y="71" key="RollbackChangesDialog/0.0.1366.738@0.0.1366.738" timestamp="1659732834856" />
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1659976280373">
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1660556813729">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1659976280373" />
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1660556813729" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1660150273399">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
